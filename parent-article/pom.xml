@@ -33,6 +33,10 @@
     </properties>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>follow-mode</module>
+    </modules>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
