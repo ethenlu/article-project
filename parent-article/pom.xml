@@ -14,8 +14,22 @@
     <name>parent-article</name>
     <description>Demo project for Spring Boot</description>
 
+    <!--集中管理依赖版本号-->
     <properties>
         <java.version>1.8</java.version>
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <mysql.version>8.0.21</mysql.version>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <kafka.version>2.6.0</kafka.version>
+        <rocketmq.version>4.7.1</rocketmq.version>
+        <lombok.version>1.18.12</lombok.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <junit.version>4.12</junit.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <jsoup.version>1.13.1</jsoup.version>
+        <webmagic.version>0.7.3</webmagic.version>
+        <swagger.version>2.9.2</swagger.version>
+
     </properties>
     <packaging>pom</packaging>
 
@@ -28,15 +42,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <!--<scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>-->
         </dependency>
+
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
